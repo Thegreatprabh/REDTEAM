@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "redteam"
+version = "0.1.0"
+description = "LLM red-teaming / jailbreak-testing framework (canary-based, defensive)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Prabhjot Singh" }]
+keywords = ["llm", "red-team", "jailbreak", "prompt-injection", "ai-safety", "security"]
+dependencies = []
+
+[project.scripts]
+redteam = "redteam.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["redteam*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
